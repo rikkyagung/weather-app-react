@@ -11,6 +11,7 @@ function App() {
    const isLoading = status === "idle" || status === "pending";
    const isError = status === "reject";
    const [errorMessage, setErrorMessage] = useState("");
+   const [temp, setTemp] = useState("celcius");
    const [placeInfo, setPlaceInfo] = useState({
       name: "",
       country: "",
@@ -18,8 +19,9 @@ function App() {
       cloud: "",
       icon: "",
       temp_celcius: "",
+      temp_fahrenheit: "",
       feelslike_celcius: "",
-      last_updated: "",
+      feelslike_fahrenheit: "",
    });
 
    const URL = `https://api.weatherapi.com/v1/current.json?key=`;
@@ -27,7 +29,7 @@ function App() {
    const place = `&q=${location}&aqi=no`;
 
    useEffect(() => {
-      const fetchWeather = async () => {
+      const getWeather = async () => {
          setStatus("pending");
 
          await axios
@@ -44,8 +46,9 @@ function App() {
                   cloud: current.cloud,
                   icon: current.condition.icon,
                   temp_celcius: current.temp_c,
+                  temp_fahrenheit: current.temp_f,
                   feelslike_celcius: current.feelslike_c,
-                  last_updated: current.last_updated,
+                  feelslike_fahrenheit: current.feelslike_f,
                });
             })
             .catch((error) => {
@@ -54,7 +57,7 @@ function App() {
             });
       };
 
-      fetchWeather();
+      getWeather();
    }, [location]);
 
    useEffect(() => {
@@ -71,10 +74,15 @@ function App() {
       setSearch(target);
    };
 
-   const handleSubmit = (e) => {
-      e.preventDefault();
+   const handleSubmit = (event) => {
+      event.preventDefault();
       setLocation(search);
       setSearch("");
+   };
+
+   const changeTemp = (event) => {
+      const target = event.target.id;
+      setTemp(target);
    };
 
    return (
@@ -83,7 +91,7 @@ function App() {
             <h1 className="text-center text-3xl font-bold leading-10 tracking-wide text-slate-800 dark:text-slate-50">
                Simple Weather App
             </h1>
-            <p className="mt-2 mb-4 text-center text-slate-500 dark:text-slate-400">
+            <p className="mt-2 mb-4 text-center font-light text-slate-500 dark:text-slate-400">
                based on weatherapi.com
             </p>
             <div className="flex justify-end">
@@ -127,13 +135,13 @@ function App() {
                <input
                   type="text"
                   value={search}
-                  className="w-full rounded-full border-2 px-4 focus-visible:outline-slate-400"
+                  className="w-full rounded-full border-2 px-4 text-[.9rem] focus-visible:outline-slate-400"
                   placeholder="Search place..."
                   onChange={handleChange}
                />
                <button
                   disabled={!search}
-                  className="rounded-full bg-indigo-500 px-7 py-2 text-slate-50 shadow-lg shadow-indigo-500/50 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
+                  className="rounded-full bg-indigo-500 px-7 py-2.5 text-[.9rem] text-slate-50 shadow-lg shadow-indigo-500/50 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
                >
                   Check
                </button>
@@ -151,7 +159,7 @@ function App() {
                      </p>
                   ) : (
                      <>
-                        <p className="mt-8 text-center text-slate-800 dark:text-slate-50">
+                        <p className="mt-8 text-center font-light text-slate-800 dark:text-slate-50">
                            Rigth now in{" "}
                            <span className="font-bold">
                               {placeInfo.name} - {placeInfo.country}
@@ -174,15 +182,45 @@ function App() {
                            <p className="text-5xl font-medium dark:text-slate-50">
                               {placeInfo.cloud}
                            </p>
-                           <p className="text-slate-500 dark:text-slate-400">
-                              {placeInfo.temp_celcius}&#176;C /{" "}
-                              {placeInfo.feelslike_celcius}
-                              &#176;C
-                           </p>
+                           {temp === "celcius" ? (
+                              <p className="text-slate-500 dark:text-slate-400">
+                                 {placeInfo.temp_celcius}&#176;C /{" "}
+                                 {placeInfo.feelslike_celcius}
+                                 &#176;C
+                              </p>
+                           ) : (
+                              <p className="text-slate-500 dark:text-slate-400">
+                                 {placeInfo.temp_fahrenheit}&#176;F /{" "}
+                                 {placeInfo.feelslike_fahrenheit}
+                                 &#176;F
+                              </p>
+                           )}
                         </div>
-                        <p className="mt-4 text-center text-slate-500 dark:text-slate-400">
-                           Last Update: {placeInfo.last_updated}
-                        </p>
+                        <div className="mt-8 text-center text-slate-400">
+                           <span
+                              id="celcius"
+                              className={
+                                 temp === "celcius"
+                                    ? "tab-active"
+                                    : "tab-unActive"
+                              }
+                              onClick={changeTemp}
+                           >
+                              Celcius
+                           </span>
+                           |
+                           <span
+                              id="fahrenheit"
+                              className={
+                                 temp === "fahrenheit"
+                                    ? "tab-active"
+                                    : "tab-unActive"
+                              }
+                              onClick={changeTemp}
+                           >
+                              Fahrenheit
+                           </span>
+                        </div>
                      </>
                   )}
                </>
