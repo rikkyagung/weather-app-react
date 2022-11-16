@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+  <h1 align="center">W-App</h1>
+  <p align="center">
+    <img src="/src/assets/Logo-01.webp" alt="Logo" width="80" height="80">
+  <p align="center">
+    <br />
+    <br />
+    <a href="https://weather-app-agung.netlify.app/">View Demo</a>
+  </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+-  About the Project
+   -  Built With
+-  Getting Started
+   -  Prerequisites
+   -  Installation
 
-In the project directory, you can run:
+## About the Project
 
-### `npm start`
+![preview-image.](/src/assets/WAPP-06.webp "Preview Image.")
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Simple weather app built with React Hooks and Tailwind CSS. This app can display the current weather based on your input search (default value = Jakarta), and it also has dark and light modes. Data obtained by API (weatherapi.com).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Built With
 
-### `npm test`
+-  [![React][reactjs]][react-url]
+-  [![Tailwind][tailwindcss]][tailwind-url]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-### `npm run build`
+[reactjs]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[tailwindcss]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[tailwind-url]: https://tailwindcss.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a local copy up and running, follow these simple example steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+1. Your computer has Node js installed. You can download it from [Node JS Officially Website](https://nodejs.org/en/).
+2. Text editor (VSCode, Atom, Sublime Text, Notepad, etc).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```
+   https://github.com/rikkyagung/weather-app-react.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   -  If you're using git bash, go to the file's directory that you want to use, and then clone the repository.
 
-## Learn More
+   -  If you're using a text editor, such as VSCode. Launch the terminal and clone the repository.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Install Packages
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```
+   npm install
+   ```
 
-### Code Splitting
+   or
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```
+   yarn add
+   ```
