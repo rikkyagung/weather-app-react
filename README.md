@@ -1,6 +1,6 @@
   <h1 align="center">W-App</h1>
   <p align="center">
-    <img src="/src/assets/Logo-01.webp" alt="Logo" width="80" height="80">
+    <img src="/src/assets/Logo-01.webp" alt="Logo">
   <p align="center">
     <br />
     <br />
