@@ -1,11 +1,11 @@
-  <h1 align="center">W-App</h1>
-  <p align="center">
-    <img src="/src/assets/Logo-01.webp" alt="Logo">
-  <p align="center">
-    <br />
-    <br />
-    <a href="https://weather-app-agung.netlify.app/">View Demo</a>
-  </p>
+<h1 align="center">W-App</h1>
+   <p align="center">
+   <a href="https://weather-app-agung.netlify.app/">
+      <img src="/src/assets/Logo-01.webp" alt="Logo">
+   </a>
+   <p align="center">
+      <a href="https://weather-app-agung.netlify.app/">View Demo</a>
+   </p>
 </p>
 
 ## Table of Contents
