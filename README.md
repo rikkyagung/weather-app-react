@@ -1,7 +1,7 @@
 <h1 align="center">W-App</h1>
    <p align="center">
    <a href="https://weather-app-agung.netlify.app/">
-      <img src="/src/assets/Logo-01.webp" alt="Logo" width="150" height="150">
+      <img src="/src/assets/Logo-01.webp" alt="Logo" width="200" height="200">
    </a>
    <p align="center">
       <a href="https://weather-app-agung.netlify.app/">View Demo</a>
